@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    import Vue from 'vue'
+    import {setCookie} from 'tiny-cookie'
     export default {
         name: "Login",
         data() {
@@ -35,14 +35,13 @@
         },
         methods:{
             onSubmit(){
-                console.log('submit');
-                doLogin(this.account)?this.$router.replace('main'):this.errorTip=true;
+                doLogin(this.account)?this.$router.replace({name:'index'}):this.errorTip=true;
             }
         }
     }
     let doLogin=(account)=>{
         if(account.name==='admin'&&account.psw==='123'){
-            Vue.$cookie.set('account',account.name);
+            setCookie('account',account.name);
             return true;
         }
     }

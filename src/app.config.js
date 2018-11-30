@@ -1,0 +1,4 @@
+module.exports = {
+  title: 'Vue Enterprise Boilerplate',
+  description: 'Opinionated boilerplate project for an enterprise Vue frontend',
+}
