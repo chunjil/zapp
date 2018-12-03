@@ -1,4 +1,4 @@
 module.exports = {
-  title: 'Vue Enterprise Boilerplate',
-  description: 'Opinionated boilerplate project for an enterprise Vue frontend',
+  title: '标题',
+  description: '描述',
 }
