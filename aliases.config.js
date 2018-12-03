@@ -3,27 +3,29 @@ const path = require('path')
 const prettier = require('prettier')*/
 
 const aliases = {
-  '@': '.',
-  '@src': 'src',
-  '@router': 'src/router',
-  '@views': 'src/views',
-  '@layouts': 'src/router/layouts',
-  '@components': 'src/components',
-  '@assets': 'src/assets',
-  '@utils': 'src/utils',
-  '@state': 'src/state',
-  '@design': 'src/design/index.scss',
+    '@':'.',
+    '@src': 'src',
+    '@router': 'src/router',
+    '@views': 'src/views',
+    '@layouts': 'src/layouts',
+    '@components': 'src/components',
+    '@assets': 'src/assets',
+    '@utils': 'src/utils',
+    '@state': 'src/state',
+    '@design': 'src/design/index.scss',
+    '@modules': 'src/modules'
 }
 
 module.exports = {
-  webpack: {},
-  jest: {},
-  jsconfig: {},
+    webpack: {},
+    jest: {},
+    jsconfig: {},
 }
 for (const alias in aliases) {
     const aliasTo = aliases[alias]
     module.exports.webpack[alias] = resolveSrc(aliasTo)
 }
+
 /*for (const alias in aliases) {
   const aliasTo = aliases[alias]
   module.exports.webpack[alias] = resolveSrc(aliasTo)
@@ -73,5 +75,5 @@ fs.writeFile(
 )
 */
 function resolveSrc(_path) {
-  return path.resolve(__dirname, _path)
+    return path.resolve(__dirname, _path)
 }

@@ -14,3 +14,8 @@ $color-input-border: lighten($color-heading-text, 50%);
 $color-button-bg: $color-link-text;
 $color-button-disabled-bg: darken(desaturate($color-button-bg, 20%), 10%);
 $color-button-text: white;
+
+// HEADER
+$color-header-bg:#444;
+$color-header-text:#f9f7f5;
+$color-header-logo-bg:#91081b;
