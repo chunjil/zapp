@@ -34,8 +34,8 @@ module.exports = {
         sourceMap: true,
         loaderOptions:{
             sass:{
-                includePaths: ['./node_modules'],
-                data: `@import "@design";`
+                includePaths: ['./node_modules'],/*
+                data: `@import "@design/import";`*/
             }
         }
     },

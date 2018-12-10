@@ -31,7 +31,7 @@
 </script>
 
 <style lang="scss" module>
-    @import '@design';
+    @import '@design/index.scss';
 
     .active a {
         font-weight: 600;

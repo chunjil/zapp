@@ -31,7 +31,7 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@design';
+@import '@design/index.scss';
 
 .input {
   @extend %typography-small;

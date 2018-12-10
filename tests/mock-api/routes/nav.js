@@ -3,7 +3,6 @@ const Nav = require('../resources/nav')
 
 module.exports = app => {
   app.get('/api/nav', (request, response) => {
-    debugger
     const currentUser = Users.findBy('token', request.headers.authorization)
 
     if (!currentUser) {

@@ -23,8 +23,8 @@
         <!--<div class="main-title" v-if="topt">
            <icon :type="icon"></icon> {{title}}
         </div>-->
-        <div class="in-title" v-if="title||title.length>0">{{title}}</div>
-        <div class="chart">
+        <div class="in-title" v-if="title && title.length>0">{{title}}</div>
+        <div class="chart" :class="title && title.length>0?'':'height-100'">
             <slot></slot>
         </div>
     </div>
@@ -36,16 +36,22 @@
         name: 'databox',
         props: {
             title: String,
-            dheight: String,
+            dheight: {
+                type:String,
+                default: '100%'
+            },
             icon: String,
             boxb: {
                 type: Boolean,
                 default: true
             }
-        }
+        },
     }
 </script>
 
 <style lang="scss">
     @import './index';
+    .height-100{
+        height: 100% !important;
+    }
 </style>

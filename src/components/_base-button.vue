@@ -8,7 +8,7 @@
 </template>
 
 <style lang="scss" module>
-@import '@design';
+@import '@design/index.scss';
 
 .button {
   @extend %typography-small;

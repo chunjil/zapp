@@ -1,0 +1,12 @@
+// CONTENT
+$color-text:#f9f7f5;
+
+$color-chart-theme-main:#6981ee;
+$color-chart-theme-sub:#0da5ee;
+
+//noinspection ALL
+:export{
+  color-text: $color-text;
+  color-chart-theme-main:$color-chart-theme-main;
+  color-chart-theme-sub:$color-chart-theme-sub;
+}

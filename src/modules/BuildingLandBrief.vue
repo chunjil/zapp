@@ -1,29 +1,15 @@
 <template>
-    <el-row :type="flex" style="flex-direction:column">
-        <el-col :span="8">
-            <databox :title="'建设用地现状'" :dheight="'280px'">
-                <div class="chart-container" v-echarts="option"></div>
-                <!--<el-row :gutter="5" style="height: 100%">
-                    <el-col :span="8" style="height: 100%">
-
-                    </el-col>
-                </el-row>-->
-            </databox>
-        </el-col>
-        <el-col :span="16">
-            <databox :title="'建设用地现状'" :dheight="'280px'">
-                <div class="chart-container" v-echarts="option"></div>
-                <!--<el-row :gutter="5" style="height: 100%">
-                    <el-col :span="8" style="height: 100%">
-
-                    </el-col>
-                </el-row>-->
-            </databox>
-        </el-col>
-    </el-row>
+    <databox :title="'建设用地现状'" :dheight="'100%'">
+        <div class="chart-container" v-echarts="option"></div>
+    </databox>
 </template>
 
 <script>
+
+    import statelessStore from '@state/stateless-store'
+    const colorText=statelessStore.style['color-text']||'#fff'
+    const colorChartMan=statelessStore.style['color-chart-theme-main']||'#6981ee'
+    const colorChartSub=statelessStore.style['color-chart-theme-sub']||'#0da5ee'
 
     var rate = 0.56;
     var linear_color = {
@@ -34,24 +20,23 @@
         y2: 1,
         colorStops: [{
             offset: 0,
-            color: '#6959CD'
+            color: colorChartMan
         }, {
             offset: 1,
-            color: '#ede0ff'
+            color: colorChartSub
         }]
     };
     let option = {
         title: {
             text: "开发强度",
             textStyle: {
-                color: '#fff',
+                color: colorText,
                 fontSize: 14,
                 fontWeight: 'bold'
             },
             left: 'center',
             bottom: '20%'
         },
-        backgroundColor: '#111c4e',
         series: [{
             type: 'pie',
             hoverAnimation: false,
@@ -68,7 +53,7 @@
                         position: 'center',
                         formatter: (rate * 100).toFixed(0) + '%',
                         textStyle: {
-                            color: '#fff',
+                            color: colorText,
                             fontSize: 30,
                             fontWeight: 'bold'
                         }
@@ -98,11 +83,9 @@
             }],
         }]
     };
-    import databox from '@components/databox'
 
     export default {
         name: "BuildingLandBrief",
-        components: {databox},
         data() {
             return {'option': option};
         }

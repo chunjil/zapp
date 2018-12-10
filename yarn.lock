@@ -8806,10 +8806,10 @@ vue-cookie@^1.1.4:
   dependencies:
     tiny-cookie "^1.0"
 
-vue-echarts-directive@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/vue-echarts-directive/-/vue-echarts-directive-0.4.1.tgz#acd411ef624fa7ab888b7288b0fa2289b3924ee1"
-  integrity sha512-YEtli+L7E7UEVnQrbjiTzjvYdvT3k6HEnLM0j+QMYUhT1okEA+CzDNajMWhGCW8nM57/eTfXoaU68nG9pa6UWg==
+vue-echarts-directive@^0.5:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/vue-echarts-directive/-/vue-echarts-directive-0.5.0.tgz#bbf8959e357d3c0203935452ba5dd16e8f504960"
+  integrity sha512-HjAF4BdVK4GapnfIxsfMd4T65MxzkKcd8vLYvgoqyMcEDu2+ZAlpvBLdapwRE/+iuDgTg8Obh+c690E4UqV95w==
   dependencies:
     echarts "^4.x.x"
     vue "^2.x.x"

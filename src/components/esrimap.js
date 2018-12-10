@@ -1,5 +1,9 @@
-export const createMap = (container, loader, config) => {
+import store from '@state/store'
+
+export const createMap = (container, loader) => {
     const esriLoader = loader;
+    const config=store.getters('config/appConfig')
+
     esriLoader.loadModules(
         [
             'esri/config',
@@ -67,8 +71,8 @@ export const createMap = (container, loader, config) => {
 
             //设置地图
             let basemap = new Basemap({
-                //baseLayers: [baseLayer],
-                baseLayers: [zjTdtuLayer],
+                baseLayers: [baseLayer],
+                //baseLayers: [zjTdtuLayer],
                 title: 'Zhejiang tiandi tu',
                 id: 'td-map'
             });
@@ -84,7 +88,7 @@ export const createMap = (container, loader, config) => {
             });
 
             //添加图层
-            let featuresServer = config.FeaturesServer;
+            /*let featuresServer = config.FeaturesServer;
             let firstLayer;
             config.layers.forEach((id) => {
                 let url = featuresServer + id;
@@ -93,15 +97,14 @@ export const createMap = (container, loader, config) => {
                     firstLayer = l;
                     view.extent = firstLayer.fullExtent;
                     firstLayer.when(() => {
-                        console.log(firstLayer.fullExtent);
                         view.extent = firstLayer.fullExtent;
                     })
                 }
                 map.add(l);
-            });
+            });*/
 
 
-            view.when(() => {
+            /*view.when(() => {
                 console.log(firstLayer.fullExtent)
                 const legend = new Legend({
                     view,
@@ -125,14 +128,15 @@ export const createMap = (container, loader, config) => {
                 })
                 view.ui.add(layersExpand, 'top-right')
                 view.ui.add(legendExpand, 'top-right')
-            });
+            });*//*
             const searchWidget = new Search({
                 view: view
             })
             view.ui.add(searchWidget, {
                 position: 'top-left',
                 index: 0
-            })
+            })*/
+            view.ui.remove('attribution')
 
         }
     )

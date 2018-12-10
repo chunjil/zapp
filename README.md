@@ -1,29 +1,9 @@
 # zapp
 
-## Project setup
-```
-yarn install
-```
+数据可视化项目的前端实现。
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 前后端分离，mock数据测试
+- 路由拦截
+- 本地存储
+- 支持多主题开发（需要考虑图表、地图）（通过动态引用布局组件方式实现，暂时只有一个暗蓝主题）
+- 预支持响应式布局（多端屏幕浏览）

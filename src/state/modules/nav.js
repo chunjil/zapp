@@ -5,7 +5,7 @@ import apis from "../apis";
 //获取当前用户权限下的导航
 
 export const state = {
-    currentNavList: getSavedState('nav.currentNavList')
+    currentNavList: getSavedState('nav.currentNavList')||[]
 }
 
 export const mutations = {

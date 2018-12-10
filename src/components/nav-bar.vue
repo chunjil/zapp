@@ -6,28 +6,6 @@
         components: {NavBarRoutes},
         data() {
             return {
-                persistentNavRoutes: [
-                    {
-                        name: 'home',
-                        title: 'Home',
-                    },
-                ],
-                loggedInNavRoutes: [
-                    {
-                        name: 'profile',
-                        title: () => 'Logged in as ' + this.currentUser.name,
-                    },
-                    {
-                        name: 'logout',
-                        title: 'Log out',
-                    },
-                ],
-                loggedOutNavRoutes: [
-                    {
-                        name: 'login',
-                        title: 'Log in',
-                    },
-                ],
             }
         },
         computed: {
@@ -43,10 +21,6 @@
         method: {
             ...navMethods
         },
-        updated(){
-            debugger
-            console.log(this.currentNavList)
-        }
         /*
         created() {
             this.getNavList().then(navList => {
@@ -74,7 +48,7 @@
 </template>
 
 <style lang="scss" module>
-    @import '@design';
+    @import '@design/index.scss';
 
     .container {
         padding: 0;
